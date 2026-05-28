@@ -19,7 +19,7 @@ namespace WIFI{
                 ERROR,
             };
             Wifi(void){
-                if(ESP_OK != _get_mac()) abort();
+                if(ESP_OK != _get_mac()) esp_restart();
             }
             esp_err_t init(void); // set everything up
             esp_err_t begin(void); // start wifi, connect, etc

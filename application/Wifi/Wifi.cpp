@@ -1,7 +1,9 @@
 #include "Wifi.hpp"
 
 namespace WIFI{
+
     char Wifi::mac_add_cstr[]{};
+
     esp_err_t Wifi::_get_mac(void)
     {
        uint8_t mac_byte_buffer[6]{};
@@ -10,7 +12,7 @@ namespace WIFI{
 
        if(ESP_OK == status)
        {
-           snprintf(mac_add_cstr, sizeof(mac_add_cstr), "%01X%02X%02X%02X%02X%02X",
+           snprintf(mac_add_cstr, sizeof(mac_add_cstr), "%02X%02X%02X%02X%02X%02X",
                    mac_byte_buffer[0],
                    mac_byte_buffer[1],
                    mac_byte_buffer[2],
