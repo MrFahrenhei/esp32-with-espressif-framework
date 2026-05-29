@@ -4,6 +4,8 @@ namespace WIFI{
 
     char Wifi::mac_add_cstr[]{};
 
+    std::atomic_bool Wifi::first_call{false};
+
     esp_err_t Wifi::_get_mac(void)
     {
        uint8_t mac_byte_buffer[6]{};
